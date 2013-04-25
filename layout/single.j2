@@ -1,0 +1,24 @@
+{# Columns template #}
+
+{% extends "base2.j2" %}
+
+
+{% block content %}
+
+{# <div class="page-header">
+  {% block header %}
+  <h1>
+    {% block page_title %}{{ resource.meta.title }}{% endblock %}
+    {% if resource.meta.subtitle %}<small>{% block page_subtitle %}{{ resource.meta.subtitle }}{% endblock %}</small>{% endif %}
+  </h1>
+  {% endblock header %}
+</div> #}
+
+      {% filter markdown -%}
+      {% block main %}{% endblock %}
+      {%- endfilter %}
+
+{% endblock content %}
+
+
+

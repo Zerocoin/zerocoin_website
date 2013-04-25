@@ -1,0 +1,21 @@
+mode: development # Use "hyde publish -c prod.yaml to have this automatically switch to production
+media_root: media # Relative path from content folder.
+media_url: /media # URL where the media files are served from.
+plugins:
+    - hyde.ext.plugins.meta.MetaPlugin
+    - hyde.ext.plugins.auto_extend.AutoExtendPlugin
+    - hyde.ext.plugins.syntext.SyntextPlugin
+    - hyde.ext.plugins.textlinks.TextlinksPlugin
+context:
+    data:
+        site_title: Zerocoin
+        author:
+            name: Ian Miers
+            url: "http://example.com"
+        google_analytics_id: UA-XXXXX-YY
+        home_url: index.html
+        menu:
+            - title: Home
+              url: index.html
+            - title: test
+              url: test.html
