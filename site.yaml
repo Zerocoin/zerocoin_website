@@ -19,3 +19,5 @@ context:
               url: index.html
             - title: test
               url: test.html
+meta:
+    nodemeta: meta.yaml
