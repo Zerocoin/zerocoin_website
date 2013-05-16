@@ -17,6 +17,12 @@ text-transform:uppercase;
 margin-top: 20px;
 margin-bottom: 20px;
 }
+
+.banner img{
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
 .footer{
 background-color:rgba(21, 25, 25, 0.8)
 }

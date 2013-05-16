@@ -26,10 +26,10 @@
 
     {% block favicons %}
     {# Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references #}
-    <link rel="shortcut icon" href="{{ media_url('img/favicon.ico') }}">
-    <link rel="apple-touch-icon" href="{{ media_url('img/apple-touch-icon.png') }}">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ media_url('img/appleimgim-touch-icon-72x72.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ media_url('img/apple-touch-icon-114x114.png') }}">
+    <link rel="shortcut icon" href="{{ media_url('images/favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ media_url('images/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ media_url('images/appleimgim-touch-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ media_url('images/apple-touch-icon-114x114.png') }}">
     {% endblock favicons %}
     
     {% block headjs %}
@@ -57,7 +57,12 @@
             <div class="row-fluid banner">
                 <div class="span6 offset3" />
                     {% block banner %}
-                    <h1><a class="brand" href="{{ home_url }}">{{ site_title }}</a> </h1>
+                    <h1>
+                        <a class="brand" href="{{ home_url }}">
+                            <img src="{{ media_url('/media/images/zq_bw_72.png') }}"/>
+                            {{ site_title }}
+                        </a> 
+                    </h1>
                     {% endblock banner %}
                 </div>
             </div>
