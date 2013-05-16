@@ -1,0 +1,3 @@
+extends: single.j2
+default_block: main
+

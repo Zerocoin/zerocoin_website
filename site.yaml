@@ -6,6 +6,7 @@ plugins:
     - hyde.ext.plugins.auto_extend.AutoExtendPlugin
     - hyde.ext.plugins.syntext.SyntextPlugin
     - hyde.ext.plugins.textlinks.TextlinksPlugin
+    - hyde.ext.plugins.urls.UrlCleanerPlugin
 context:
     data:
         site_title: Zerocoin
@@ -16,8 +17,21 @@ context:
         home_url: index.html
         menu:
             - title: Home
-              url: index.html
-            - title: test
-              url: test.html
+              url: index
+            - title: People
+              url: people
+            - title: software
+              url: software
+            - title: Q and A
+              url: q_and_a
+            - title: Research Paper
+              url: research_paper
 meta:
     nodemeta: meta.yaml
+
+urlcleaner:
+    index_file_names:
+        - index.html
+    strip_extensions:
+        - html
+    append_slash: true
