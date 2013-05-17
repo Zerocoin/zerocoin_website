@@ -1,3 +1,5 @@
 extends: single.j2
+layout: page
+group: navigation
 default_block: main
 
