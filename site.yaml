@@ -17,21 +17,15 @@ context:
         home_url: index.html
         menu:
             - title: Home
-              url: index
+              url: index.html
             - title: People
-              url: people
+              url: people.html
             - title: software
-              url: software
+              url: software.html
             - title: Q and A
-              url: q_and_a
+              url: q_and_a.html
             - title: Research Paper
-              url: research_paper
+              url: research_paper.html
 meta:
     nodemeta: meta.yaml
 
-urlcleaner:
-    index_file_names:
-        - index.html
-    strip_extensions:
-        - html
-    append_slash: true
