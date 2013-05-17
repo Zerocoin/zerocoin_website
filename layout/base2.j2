@@ -3,7 +3,14 @@
   <head>
     {% block starthead %}{% endblock starthead %}
     <meta charset="{{ resource.meta.charset }}">
-    <title>{% block title %}{{ resource.meta.title }}{% endblock %} | {{ site_title }}</title>
+    <title>
+    {% block title %}
+    {% if  resource.meta.title %}
+        {{ resource.meta.title|default ~ "|" ~ site_title }} 
+    {% else %}
+        {{ site_title}}
+    {% endif %}
+    {% endblock %}</title>
     <meta name="description" content="{{ resource.meta.description }}">
     <meta name="author" content="{{ resource.meta.author }}">
 
@@ -59,8 +66,7 @@
                     {% block banner %}
                     <h1>
                         <a class="brand" href="{{ home_url }}">
-                            <img src="{{ media_url('/media/images/zq_bw_72.png') }}"/>
-                            {{ site_title }}
+                            <img src="{{ media_url('/media/images/zq_bw_72.png') }}"/>erocoin
                         </a> 
                     </h1>
                     {% endblock banner %}
