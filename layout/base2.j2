@@ -6,7 +6,7 @@
     <title>
     {% block title %}
     {% if  resource.meta.title %}
-        {{ resource.meta.title|default ~ "|" ~ site_title }} 
+        {{ resource.meta.title|default ~ " | " ~ site_title }} 
     {% else %}
         {{ site_title}}
     {% endif %}
