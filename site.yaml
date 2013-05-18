@@ -41,4 +41,6 @@ publisher:
 
 meta:
     nodemeta: meta.yaml
-
+markdown:
+    extensions:
+        - smartypants
