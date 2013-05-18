@@ -26,6 +26,19 @@ context:
               url: q_and_a.html
             - title: Research Paper
               url: research_paper.html
+ignore:
+   - "*.swp" # ignore gvim swap file
+   - "*~"
+   - "*.bak"
+   - ".git"
+
+publisher:
+    github:
+        type: hyde.ext.publishers.dvcs.Git
+        path: ../../zerocoin/
+        branch: gh-pages
+        url: git@github.com:JHUISI/zerocoin.git
+
 meta:
     nodemeta: meta.yaml
 

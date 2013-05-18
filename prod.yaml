@@ -1,2 +1,3 @@
 extends: site.yaml
 mode: production
+media_url: /zerocoin/media # URL where the media files are served from.
