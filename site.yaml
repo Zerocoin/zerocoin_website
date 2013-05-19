@@ -18,15 +18,15 @@ context:
         home_url: index.html
         menu:
             - title: Home
-              url: index.html
+              url: index
             - title: People
-              url: people.html
+              url: people
             - title: software
-              url: software.html
+              url: software
             - title: Q and A
-              url: q_and_a.html
+              url: q_and_a
             - title: Research Paper
-              url: research_paper.html
+              url: research_paper
 ignore:
    - "*.swp" # ignore gvim swap file
    - "*~"
@@ -46,3 +46,10 @@ markdown:
     extensions:
         - smartypants
         - toc
+
+urlcleaner:                                                                                                                                                                   
+    index_file_names:                                                                                                                                                         
+        - index.html                                                                                                                                                          
+    strip_extensions:                                                                                                                                                         
+        - html                                                                                                                                                                
+    append_slash: true 
