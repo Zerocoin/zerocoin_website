@@ -1,7 +1,79 @@
 ---
-title : Q & A 
+title: Q & A
 ---
+Questions and Answers:
 
-* Why do I care?
-* Why did you do it ?
-* Can I use it now?
+[TOC]
+### Why do I care?
+Bitcoin is, in a lot of ways, less private than a bank account.
+With a bank, you only disclose your finances to the bank and their designees.
+With Bitcoin, you disclose it to the world since the block chain and all your transactions
+are public.  Naïvely, you might think this is not an issue,
+since your name is not associated with your Bitcoin address(s)/public key(s). 
+However,  it is not very hard to identify who an address 
+belongs to based on spending patterns.  So if you have any desire for your 
+neighbors or retailers not to know what you spend your money on, you should be 
+interested in techniques to anonymize Bitcoin.  Zerocoin is the only 
+solution to this that offers provable anonymity even if *everyone* 
+running the network is out to get you.
+
+### Can I use it now?
+Unfortunately, no. We plan on releasing prototype code in June. For Zerocoin to 
+be useful, however, it either needs to be integrated
+into Bitcoin, adopted by some other alternative block chain currency, or become an alternative currency itself and get some adoption. This will take time. Follow [@ZerocoinProject](https://twitter.com/ZerocoinProject "ZerocoinProject") on twitter and check this site for updates.
+
+### What's this about a backdoor?
+There is no backdoor and there never was.  
+This was a misinterpretation of the following quote in 
+the paper and a less than ideally phrased answer in an interview. 
+> Since all Bitcoin transactions are public, anonymous
+> transactions are necessary to avoid tracking by third parties
+> even if we do not wish to provide the absolute anonymity
+> typically associated with e-cash schemes. On top of such
+> transactions, one could build mechanisms to partially or
+> explicitly identify participants to authorized parties (e.g.,
+> law enforcement). However, to limit this information to
+> authorized parties, we must ﬁrst anonymize the underlying
+> public transactions.
+
+The idea was even if you are one of the "if you haven't done anything wrong, you 
+have nothing to hide [from the government]" people (an assertion that we by no 
+means agree with), you'd still want privacy from the general public. After all, 
+we have banking secrecy laws for a reason --- you don't want your neighbors 
+knowing your financial details even if you want the FBI to know everything 
+about criminals or terrorists. Even if you wanted that world, you'd
+need something like Zerocoin to make sure only the "good guys" could use it.
+
+### Could you put a backdoor in it?
+Not covertly.  The paper has a provably secure protocol in it which is anonymous 
+(technical note: anonymity holds even if the RSA key used in the accumulator is 
+retained, so no that's not a backdoor), so absent modifications there is no way to 
+track users. The software will be open source and so any attempt to modify the protocol by inserting a backdoor would be rather obvious.
+
+As with any protocol (Bitcoin included), the government could mandate an overt 
+locked "frontdoor" so to speak. On a technical level, these kind of things tend 
+not to [work](https://en.wikipedia.org/wiki/Clipper_chip#Vulnerability "Clipper 
+Chip") for decentralized systems.  Moreover, since Zerocoin will be open source 
+any version that had such a frontdoor in it would likely be forked and have it 
+removed. 
+
+### What about money laundering?
+First, the main problem with money laundering tends to be making the money 
+appear legitimate (after all, they nailed Al Capone for tax fraud), not actually moving 
+it around. Anonymity doesn't help with that since you need to actually identify
+the sources of your income (e.g., for tax purposes) to show it is legitimate.
+
+However, Bitcoin and Zerocoin obviously make it easier to move 
+money around, which is step one in laundering money. There are, however,
+promising techniques for preventing money laundering without violating the
+privacy of non-launderers (e.g., [this paper]
+(https://www.cs.jhu.edu/~susan/papers/CHL06.pdf "Balancing Accountability 
+and Privacy Using E-Cash ")). The basic idea is if you spend more than x amount
+in one transaction (e.g., ten thousand USD), then the transaction is identified.
+If you spend less than that, you are completely anonymous. This does not depend on
+a trusted party to make the determination, rather it is a property of the cryptographic protocol. 
+Considerably more work needs to be done to apply these techniques to Bitcoin and Zerocoin
+and to prevent more sophisticated money laundering techniques, but it is a promising
+research topic. Whether anyone wants to adopt this technology is a policy question
+(as are what the exact thresholds or patterns that trigger identification), and again, there is no way
+
