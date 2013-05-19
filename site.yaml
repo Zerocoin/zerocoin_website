@@ -36,9 +36,8 @@ ignore:
 publisher:
     github:
         type: hyde.ext.publishers.dvcs.Git
-        path: ../../zerocoin/
-        branch: gh-pages
-        url: git@github.com:JHUISI/zerocoin.git
+        path: ../../zerocoin.github.io/
+        url: git@github.com:Zerocoin/zerocoin.github.io.git
 
 meta:
     nodemeta: meta.yaml
