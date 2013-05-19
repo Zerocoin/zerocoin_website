@@ -1,6 +1,6 @@
 ### What is Zerocoin?
 
-Economically, Zerocoin is a new anonymous currency which is redeemable for bitcoins and built on top of Bitcoin's technology. Just as paper currency once gained its value from being redeemable for gold, zerocoins gain their value from being redeemable for bitcoin. Technically, Zerocoin is a proposed extension to the Bitcoin payment network that adds anonymity to Bitcoin payments. We believe that tools such as Zerocoin are necessary as the current Bitcoin payment network does notoffer strong privacy protections. The main idea behind Zerocoin is to place anonymity technology into the Bitcoin network itself. This is substantially different from previous anonymization technologies such as "Laundries", since Zerocoin does not rely on a trusted centralized party that can fail or become corrupted.
+Zerocoin is a new anonymous currency which is redeemable for bitcoins and built on top of Bitcoin's technology. Just as paper currency once gained its value from being redeemable for gold, zerocoins gain their value from being redeemable for bitcoins. On a technical level, Zerocoin is a proposed extension to the Bitcoin payment network that adds anonymity to Bitcoin payments. We believe that tools such as Zerocoin are necessary as the current Bitcoin payment network does not offer strong privacy protections. The main idea behind Zerocoin is to place anonymity technology into the Bitcoin network itself. This is substantially different from previous anonymization technologies such as "laundries", since Zerocoin does not rely on a trusted centralized party that can fail or become corrupted.
  
 What makes Zerocoin different from previous approaches:
 
@@ -8,33 +8,32 @@ What makes Zerocoin different from previous approaches:
 
 * Zerocoin uses provably **secure cryptographic techniques** to ensure that Bitcoins cannot be traced. These techniques allow users to conduct transactions on the Bitcoin network while receiving strong mathematical guarantees that the transactions cannot be traced. These guarantees remain in place even if a portion of the Bitcoin network is compromised by an attacker.
  
-* Other anonymous cash systems rely on distributing the work of anonymizing users amongst a set of parties. This approach works well if all parties are fully available but can be subject to 'denial of service' attacks where a small number of nodes are taken offline. Because Zerocoin is built on top of Bitcoin, it's **widely distributed** among all the Bitcoin peers, ensuring that the system can remain available even when many nodes are compromised.
+* Other anonymous cash systems rely on distributing the work of anonymizing users amongst a set of parties. This approach works well if all parties are fully available but can be subject to "denial of service" attacks where a small number of nodes are taken offline. Because Zerocoin is built on top of Bitcoin, it is **widely distributed** among all the Bitcoin peers, ensuring that the system can remain available even when many nodes are compromised.
  
 ### The problem: Bitcoin is not private
 
-The Bitcoin payment network offers a highly decentralized mechanism for creating and transferring electronic cash around the world. Unfortunately, Bitcoin suffers from a major limitation: since transactions are stored in a public ledger (called the 'block chain') it may be possible to trace the history of any given payment -- even years after the fact. Worse, since the Bitcoin ledger is public, any party can recover this information and data mine to identify users and patterns in the transactions. In other words: Bitcoin transactions are conducted in public.
+The Bitcoin payment network offers a highly decentralized mechanism for creating and transferring electronic cash around the world. Unfortunately, Bitcoin suffers from a major limitation: since transactions are stored in a public ledger (called the "block chain") it may be possible to trace the history of any given payment -- even years after the fact. Worse, since the Bitcoin ledger is public, any party can recover this information and data mine to identify users and patterns in the transactions. In other words: Bitcoin transactions are conducted in public.
 
-The Bitcoin protocol and clients address this in two ways: (1) all Bitcoin transactions are conducted using public keys as identifiers, and these public keys are not linked to individual names. And (2) Bitcoin clients are capable of generating many public keys ('identities') to help users resist tracking. Unfortunately, a growing body of research indicates that these protections are insufficient.  This information may allow data miners to link individual transactions, identify related payments, and otherwise trace the activities of Bitcoin users. 
+The Bitcoin protocol and clients address this in two ways: (1) all Bitcoin transactions are conducted using public keys as identifiers, and these public keys are not linked to individual names. And (2) Bitcoin clients are capable of generating many public keys ("identities") to help users resist tracking. Unfortunately, a growing body of research indicates that these protections are insufficient.  This information may allow data miners to link individual transactions, identify related payments, and otherwise trace the activities of Bitcoin users. 
 
-The most common solution to this problem is to use Bitcoin laundries --- services that mix together many users' bitcoins in order to obfuscate the transaction history. Laundries suffer from a number of potential drawbacks, however, as they must be trusted to return coins. Moreover a compromised or malicious laundry offers no anonymity 
+The most common solution to this problem is to use Bitcoin laundries --- services that mix together many users' bitcoins in order to obfuscate the transaction history. Laundries suffer from a number of potential drawbacks, however, as they must be trusted to return coins. Moreover a compromised or malicious laundry offers no anonymity.
 
 ### How Zerocoin works
 
 Zerocoin operates like a distributed laundry where the laundry is implemented within the Bitcoin network itself. 
 
-Zerocoin achieves this by creating a separate anonymous currency that operates side-by-side with traditional Bitcoin on the block chain. Zerocoins can be thought of literally as coins. They're issued in a fixed denomination (for example, 1 BTC), and any user can purchase a zerocoin in exchange for the correct quantity of bitcoin. This purchase is done by placing a special new 'Zerocoin Mint' transaction onto the block chain.
+Zerocoin achieves this by creating a separate anonymous currency that operates side-by-side with traditional Bitcoin on the block chain. Zerocoins can be thought of literally as coins. They're issued in a fixed denomination (for example, 1 BTC), and any user can purchase a zerocoin in exchange for the correct quantity of bitcoin. This purchase is done by placing a special new "Zerocoin Mint" transaction into the block chain.
 
-Once a Mint transaction has been accepted by the Bitcoin peers, the same user can redeem her zerocoin back into bitcoins. She simply embeds a (preferably new) destination Bitcoin address into a 'Zerocoin Spend' transaction, then sends it into the network. If the transaction checks out, the Bitcoin peers will treat it just like a normal Bitcoin transfer --- meaning that she'll receive the full bitcoin value of the coin (minus transaction fees) at the destination address.
+Once a Mint transaction has been accepted by the Bitcoin peers, the same user can redeem her zerocoin back into bitcoins. She simply embeds a (preferably new) destination Bitcoin address into a "Zerocoin Spend" transaction, then sends it into the network. If the transaction checks out, the Bitcoin peers will treat it just like a normal Bitcoin transfer --- meaning that she'll receive the full bitcoin value of the coin (minus transaction fees) at the destination address.
 
-The key to this process is to ensure that the bitcoins received at the end of this process are completely unlinked to the bitcoins that were used in the beginning. This is accomplished using a variety of cryptographic components, including digital commitments and zero knowledge proofs. The end result is that it is mathematically infeasible to link the particular bitcoins used at the beginning and end of this process, other than through educated guesswork. 
+The key to this process is to ensure that the bitcoins received at the end of this process are completely unlinked to the bitcoins that were used in the beginning. This is accomplished using a variety of cryptographic components, including digital commitments and zero-knowledge proofs. The end result is that it is mathematically infeasible to link the particular bitcoins used at the beginning and end of this process, other than through educated guesswork.
 
-![]({{media_url('images/zerocoin_blockchain.png')}} "Zerocoin blockchain example")
+![]({{media_url('images/zerocoin_blockchain.png')}} "Zerocoin block chain example")
 
-For a more detailed explanation of the Zerocoin system you can see the original [research paper]({{media_url('pdf/ZerocoinOakland.pdf')}}) or [this](http://blog.cryptographyengineering.com/2013/04/zerocoin-making-bitcoin-anonymous.html "Zerocoin: making Bitcoin Anonymous") blog post that gives a high-level summary.
+For a more detailed explanation of the Zerocoin system you can see the original [research paper]({{media_url('pdf/ZerocoinOakland.pdf')}}) or [this](http://blog.cryptographyengineering.com/2013/04/zerocoin-making-bitcoin-anonymous.html "Zerocoin: Making Bitcoin Anonymous") blog post that gives a high-level summary.
 
 ### The road ahead
-As of right now Zerocoin is prototype software written to validate the concept and provide basic performance numbers.  In the coming months we intend to
+As of right now Zerocoin is prototype software written to validate the concept and provide basic performance numbers.  In the coming months we intend to:
 
-* Clean up and release the code ( likely mid to late June)
-* Explore and possibly implement a more efficient construction
-* See if we can actually get this adopted in Bitcoin or some alternate block chain currency
+* Clean up and release the code (likely mid to late June)
+
