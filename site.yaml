@@ -25,8 +25,8 @@ context:
               url: software
             - title: Q and A
               url: q_and_a
-            - title: Research Paper
-              url: research_paper
+            - title: Paper, Press, etc
+              url: talks_and_press
 ignore:
    - "*.swp" # ignore gvim swap file
    - "*~"
