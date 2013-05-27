@@ -20,7 +20,8 @@
     <![endif]-->
 
     {% block basecss %}
-    <link href="{{ media_url('css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ media_url('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ media_url('css/bootstrap-responsive.min.css') }}" rel="stylesheet">
     <link href="{{ media_url('css/style.css') }}" rel="stylesheet">
     <link href="{{ media_url('css/stickyfooter.css') }}" rel="stylesheet">
     <link href="{{ media_url('css/nav.css') }}" rel="stylesheet">
@@ -54,15 +55,26 @@
     <div id="wrap"> <!-- Wrap for sticky footer -->
 
             <div class="row-fluid">
-                <div class="span6 offset3">                
+                <div class="span7 offset3">  
+
+                      
                     <div class="navbar">
+<a class="btn btn-navbar collapsed" data-align="left" data-toggle="collapse" data-target="#foobar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+                        
+                    <div class="nav-collapse" id="foobar">
                         {% from "macros.j2" import render_main_menu with context %}
                         {{ render_main_menu() }}
-                    <div class="pull-right" style="padding: 10px 0px 0px 0px;">
+                    <div class="pull-right twitter-div" >
 <a href="https://twitter.com/zerocoinproject" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @zerocoinproject</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </div>
 
+
+                     </div>
                     </div>
                 </div>
             </div>
@@ -106,10 +118,10 @@
     {# Javascript at the bottom for fast page loading #}
     {% block jquery %}
     {# Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary #}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-    <script>window.jQuery || document.write('<script src="{{ media_url('js/libs/jquery-1.5.1.min.js.js') }}">\x3C/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>    
+    <script>window.jQuery || document.write('<script src="{{ media_url('js/libs/jquery-1.9.1.min.js') }}">\x3C/script>')</script>
     {% endblock jquery %}
-
+    {#<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>#}
     {% block bootstrap_scripts %}
     {# Uncomment any of these lines to enable that plugin on your site #}
 {#    <script src="{{ media_url('js/libs/bootstrap-alerts.js') }}"></script>#}
