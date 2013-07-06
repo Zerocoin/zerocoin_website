@@ -21,6 +21,8 @@ context:
               url: index
             - title: People
               url: people
+            - title: Contribute
+              url: contribute
             - title: software
               url: software
             - title: Q and A
