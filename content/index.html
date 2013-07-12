@@ -1,3 +1,5 @@
+#### Libzerocoin alpha version available. See [software](software).
+
 ### What is Zerocoin?
 
 Zerocoin is a proposed extension to the Bitcoin payment network that adds anonymity to Bitcoin payments. Just as paper currency once gained its value from being redeemable for gold, zerocoins gain their value from being redeemable for bitcoins. We believe that tools such as Zerocoin are necessary as the current Bitcoin payment network does not offer strong privacy protections. The main idea behind Zerocoin is to place anonymity technology into the Bitcoin network itself. This is substantially different from previous anonymization technologies such as "laundries", since Zerocoin does not rely on a trusted centralized party that can fail or become corrupted.
@@ -33,8 +35,10 @@ The key to this process is to ensure that the bitcoins received at the end of th
 For a more detailed explanation of the Zerocoin system you can see the original [research paper]({{media_url('pdf/ZerocoinOakland.pdf')}}) or [this](http://blog.cryptographyengineering.com/2013/04/zerocoin-making-bitcoin-anonymous.html "Zerocoin: Making Bitcoin Anonymous") blog post that gives a high-level summary.
 
 ### The road ahead
-As of right now Zerocoin is prototype software written to validate the concept and provide basic performance numbers.  In the coming months we intend to:
+We have released an alpha version of libzerocoin, a library suitable for integration into Bitcoin clients. See [software](software). 
 
-* Release an improved prototype modification of the bitcoind client (likely in June)
+We still need to:
+
+* Continue to improve the library.
 * Provide a [BIP](https://en.bitcoin.it/wiki/Bitcoin_Improvement_Proposals "Bitcoin Improvement Process") style specification of the Zerocoin protocol
-
+* _Get someone integrate it into bitcoin/litecoin/*coin_
