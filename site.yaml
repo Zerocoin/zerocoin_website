@@ -9,12 +9,12 @@ plugins:
     - hyde.ext.plugins.urls.UrlCleanerPlugin
 context:
     data:
-        site_title: Zerocoin
+        site_title: Zerocash
         author:
             name: Ian Miers
             url: "http://hms.isi.jhu.edu/index.php/people/11.html"
             twitter: imichaelmiers
-        google_analytics_id: UA-40085231-1
+        google_analytics_id: UA-47912220-1
         home_url: index.html
         menu:
             - title: Home
