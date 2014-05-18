@@ -1,16 +1,10 @@
-#### Libzerocoin alpha version available. See [software](software).
 
 ### What is Zerocoin?
 
-Zerocoin is a proposed extension to the Bitcoin payment network that adds anonymity to Bitcoin payments. Just as paper currency once gained its value from being redeemable for gold, zerocoins gain their value from being redeemable for bitcoins. We believe that tools such as Zerocoin are necessary as the current Bitcoin payment network does not offer strong privacy protections. The main idea behind Zerocoin is to place anonymity technology into the Bitcoin network itself. This is substantially different from previous anonymization technologies such as "laundries", since Zerocoin does not rely on a trusted centralized party that can fail or become corrupted.
- 
-What makes Zerocoin different from previous approaches:
+Zerocoin is a project to fix a major weakness in Bitcoin: it deprives users of the privacy guarantees we take for granted in using credit cards and cash: that our neighbors, friends, and everyone else doesn't see what we bought or for how much.
 
-* Zerocoin operates in the **Bitcoin network** and is implemented as a series of extensions to the existing Bitcoin protocol. This approach means that Zerocoin can be deployed without relying on a central coin issuer or bank (as used in previous e-cash schemes). Moreover, since no single trusted party operates the Zerocoin system, attacks on Zerocoin must take on a substantial fraction of the Bitcoin network.
+Originally, it was a proposed extension, called "Zerocoin", to the Bitcoin protocol that allowed users to mix their own coins. However, a collaboration between the the original Zerocoin project members and cryptographers at MIT, The Technion, and Tel Aviv University, has produced a far more efficient protocol that allows for direct private payments. For disambiguation, we refer to this protocol as Zerocash, and detail it's technical details [here](http://zerocash-project.org).
 
-* Zerocoin uses provably **secure cryptographic techniques** to ensure that Bitcoins cannot be traced. These techniques allow users to conduct transactions on the Bitcoin network while receiving strong mathematical guarantees that the transactions cannot be traced. These guarantees remain in place even if a portion of the Bitcoin network is compromised by an attacker.
- 
-* Other anonymous cash systems rely on distributing the work of anonymizing users amongst a set of parties. This approach works well if all parties are fully available but can be subject to "denial of service" attacks where a small number of nodes are taken offline. Because Zerocoin is built on top of Bitcoin, it is **widely distributed** among all the Bitcoin peers, ensuring that the system can remain available even when many nodes are compromised.
  
 ### The problem: Bitcoin is not private
 
@@ -20,25 +14,24 @@ The Bitcoin protocol and clients address this in two ways: (1) all Bitcoin trans
 
 The most common solution to this problem is to use Bitcoin laundries --- services that mix together many users' bitcoins in order to obfuscate the transaction history. Laundries suffer from a number of potential drawbacks, however, as they must be trusted to return coins. Moreover a compromised or malicious laundry offers no anonymity.
 
+What makes Zerocoin with the new Zerocash protocol different from previous approaches:
+
+* Zerocoin operates in the **Bitcoin network** and is implemented as a series of extensions to the existing Bitcoin protocol. This approach means that Zerocoin can be deployed without relying on a central coin issuer or bank (as used in previous e-cash schemes). Moreover, since no single trusted party operates the Zerocoin system, attacks on Zerocoin must take on a substantial fraction of the Bitcoin network.
+
+* Zerocoin uses provably **secure cryptographic techniques** to ensure that Bitcoins cannot be traced. These techniques allow users to conduct transactions on the Bitcoin network while receiving strong mathematical guarantees that the transactions cannot be traced. These guarantees remain in place even if a portion of the Bitcoin network is compromised by an attacker.
+ 
+* Other anonymous cash systems rely on distributing the work of anonymizing users amongst a set of parties. This approach works well if all parties are fully available but can be subject to "denial of service" attacks where a small number of nodes are taken offline. Because Zerocoin is built on top of Bitcoin, it is **widely distributed** among all the Bitcoin peers, ensuring that the system can remain available even when many nodes are compromised.
+
+* With the new Zerocash protocol, users can make direct payments to each other with a vastly more efficient cryptographic protocol that also hides the amount of the payment, not just its origin.
+
 ### How Zerocoin works
+With the new Zerocash Protocol, Zerocoin allows direct anonymous payments between parties.
+Zerocoin transactions exist alongside the (non-anonymous) Bitcoin currency. Each user can convert (non-anonymous) bitcoins into (anonymous)  coins, which we call zerocoins. Users can then send zerocoins to other users, and split or merge zerocoins they own in any way that preserves the total value. Users can also convert zerocoins back into bitcoins, though in principle this is not necessary: all transactions can be made in terms of zerocoins.
 
-Zerocoin operates like a distributed laundry where the laundry is implemented within the Bitcoin network itself. 
-
-Zerocoin achieves this by creating a separate anonymous currency that operates side-by-side with traditional Bitcoin on the block chain. Zerocoins can be thought of literally as coins. They're issued in a fixed denomination (for example, 1 BTC), and any user can purchase a zerocoin in exchange for the correct quantity of bitcoin. This purchase is done by placing a special new "Zerocoin Mint" transaction into the block chain.
-
-Once a Mint transaction has been accepted by the Bitcoin peers, the same user can redeem her zerocoin back into bitcoins. She simply embeds a (preferably new) destination Bitcoin address into a "Zerocoin Spend" transaction, then sends it into the network. If the transaction checks out, the Bitcoin peers will treat it just like a normal Bitcoin transfer --- meaning that she'll receive the full bitcoin value of the coin (minus transaction fees) at the destination address.
-
-The key to this process is to ensure that the bitcoins received at the end of this process are completely unlinked to the bitcoins that were used in the beginning. This is accomplished using a variety of cryptographic components, including digital commitments and zero-knowledge proofs. The end result is that it is mathematically infeasible to link the particular bitcoins used at the beginning and end of this process, other than through educated guesswork.
 
 ![]({{media_url('images/zerocoin_blockchain.png')}} "Zerocoin block chain example")
 
-For a more detailed explanation of the Zerocoin system you can see the original [research paper]({{media_url('pdf/ZerocoinOakland.pdf')}}) or [this](http://blog.cryptographyengineering.com/2013/04/zerocoin-making-bitcoin-anonymous.html "Zerocoin: Making Bitcoin Anonymous") blog post that gives a high-level summary.
+For a more detailed explanation of the new zerocash protocol see the website for (Zerocash protocol)[htt://zerocash-project.org/how_zerocash_works.html].
 
 ### The road ahead
-We have released an alpha version of libzerocoin, a library suitable for integration into Bitcoin clients. See [software](software). 
-
-We still need to:
-
-* Continue to improve the library.
-* Provide a [BIP](https://en.bitcoin.it/wiki/Bitcoin_Improvement_Proposals "Bitcoin Improvement Process") style specification of the Zerocoin protocol
-* _Get someone integrate it into bitcoin/litecoin/*coin_
+The plan is to make Zerocoin, now powered by the new Zerocash protocol as it's own altcoin. To do this, we plan on release a working, non research code quality client based off the bitcoin 0.9.1 codebase.   
