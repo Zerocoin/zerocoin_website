@@ -1,7 +1,16 @@
 ---
 Press & Talks :
 ---
-### Paper
+### Zerocash Paper
+#### Zerocash: Decentralized Anonymous Payments from Bitcoin
+##### Eli Ben-Sasson	Alessandro Chiesa Christina Garman Matthew Green 
+##### Ian Miers 	Eran Tromer Madars Virza 
+
+> Bitcoin is the first digital currency to see widespread adoption. While payments are conducted between pseudonyms, Bitcoin cannot offer strong privacy guarantees: payment transactions are recorded in a public decentralized ledger, from which much information can be deduced. Zerocoin(Miers et al., IEEE S&P 2013) tackles some of these privacy issues by unlinking transactions from the payment’s origin. Yet, it still reveals payments’ destinations and amounts, and is limited in functionality.
+> In this paper, we construct a full-fledged ledger-based digital currency with strong privacy guarantees. Our results leverage recent advances in zero-knowledge Succinct Non-interactive ARguments of Knowledge (zk-SNARKs).
+> 	First, we formulate and construct decentralized anonymous payment schemes (DAP schemes). A DAP scheme enables users to directly pay each other privately: the corresponding transaction hides the payment’s origin, destination, and transferred amount. We provide formal definitions and proofs of the construction’s security.Second, we build Zerocash, a practical instantiation of our DAP scheme construction. In Zerocash, transactions are less than 1 kB and take under 6 ms to verify — orders of magnitude >more efficient than the less-anonymous Zerocoin and competitive with plain Bitcoin.
+
+### Zerocoin Paper
 #### Zerocoin: Anonymous Distributed E-Cash from Bitcoin
 #####Ian Miers, Christina Garman, Matthew Green, Aviel D. Rubin
  [IEEE Symposium on Security and Privacy (Oakland) 2013](http://www.ieee-security.org/TC/SP2013/) | [PDF]({{media_url('pdf/ZerocoinOakland.pdf')}})| Abstract:
@@ -19,7 +28,9 @@ Press & Talks :
 > integration into Bitcoin, and examine its performance both in
 >  terms of computation and impact on the Bitcoin protocol.
 
-### Press 
+Zerocash Paper 
+
+### Selected Press 
 *  [Feds Wrongly Demonize Privacy in Liberty Reserve Case](http://www.americanbanker.com/bankthink/feds-wrongly-demonize-privacy-in-liberty-reserve-case-1059468-1.html?zkPrintable=1&nopagination=1) 
     
     American Banker 5.30.2013    
@@ -38,23 +49,51 @@ Press & Talks :
 
 
 ### Talks
-#### Ian Miers @ [IEEE Symposium on Security and Privacy](http://www.ieee-security.org/TC/SP2013/)
-5.21.2013
+
+*   May 19, 2013: *Universal and affordable computational integrity*
+
+    Given at [Bitcoin 2013](http://www.bitcoin2013.com/) by Eli Ben-Sasson ([video](https://www.youtube.com/watch?v=YRcPReUpkcU)).
+
+    The talk covers, at high level, the idea of "succinct" (short and easy-to-verify) proofs.
+
+*   January 13, 2014: *Anonymizing Cryptocurrencies: How to make Bitcoin Anonymous*
+
+    Given at the [2014 Real-World Cryptography Workshop](http://realworldcrypto.wordpress.com/) by Matthew Green ([video](https://www.youtube.com/watch?v=FXU65XsLiFk)).
+
+    The talk covers Zerocoin and (an early version of) Zerocash.
+
+*   February 27, 2014: *Zerocash: Zerocoin meets SCIPR Lab*
+
+    Given at the [2014 Bitcoin Israel Conference](https://www.youtube.com/channel/UC58YJLWM7hsKUZOQtmAHcvQ) by Eli Ben-Sasson ([video](https://www.youtube.com/watch?v=l7LSSE0bRRo&feature=youtu.be)).
+
+    The talk covers the Zerocash construction.
+
+*   March 26, 2014: *Zerocash: מטבע דיגיטלי משמר פרטיות (Privacy-Preserving Digital Currency)*
+
+    Given at the 2014 Israel Science Day by Eran Tromer.
+
+    A brief overview of Zerocash, in Hebrew, to the general public.
+    
+*   April 22, 2014: *Zerocash: Zerocoin meets SCIPR Lab*
+    
+    Given at the [Israel Bitcoin Foundation](http://www.meetup.com/bitcoin-il/events/175678412/) by Eli Ben-Sasson ([video](https://www.youtube.com/watch?v=YXazVMYkE1M&feature=youtu.be)).
+
+    The talk covers the Zerocash construction.
+
+*   May 20, 2014: *Zerocash: Decentralized Anonymous Payments from Bitcoin*
+
+    To be given at the [2014 IEEE Symposium on Security and Privacy](http://www.ieee-security.org/TC/SP2014/).
+
+    The short talk will cover the Zerocash system at a high level, from a technical perspective.
+
+
+*  May 21, 2013 Ian Miers @ [IEEE Symposium on Security and Privacy](http://www.ieee-security.org/TC/SP2013/)
 Sadly no video as far as we know. Slides [KEYNOTE]({{media_url('slides/IEEESSP2013/zerocoin_oakland.key')}}) | [PDF]({{media_url('slides/IEEESSP2013/zerocoin_oakland.pdf')}})| [POWERPOINT]({{media_url('slides/IEEESSP2013/zerocoin_oakland.ppt')}})
 
-#### Ian Miers @ [Bitcoin 2013](http://www.bitcoin2013.com/)
-5.19.2013
-Less technical version of the IEEE talk above. Video available shortly. Slides [KEYNOTE]({{media_url('slides/bitcoin2013/zerocoin_bitcoin2013.key')}}) | [PDF]({{media_url('slides/bitcoin2013/zerocoin_bitcoin2013.pdf')}})| [POWERPOINT]({{media_url('slides/bitcoin2013/zerocoin_bitcoin2013.ppt')}})
+* May 19, 2013 Ian Miers @ [Bitcoin 2013](http://www.bitcoin2013.com/)
+Less technical version of the IEEE talk above. Slides [KEYNOTE]({{media_url('slides/bitcoin2013/zerocoin_bitcoin2013.key')}}) | [PDF]({{media_url('slides/bitcoin2013/zerocoin_bitcoin2013.pdf')}})| [POWERPOINT]({{media_url('slides/bitcoin2013/zerocoin_bitcoin2013.ppt')}})
 
-#### Matthew Green @ [Microsoft Research](http://research.microsoft.com/en-us/)
-4.24.2013
-
-<video src="http://msrvideo.vo.msecnd.net/rmcvideos/192058/dl/192058.mp4" poster="{{media_url("slides/msr4.24.2013/video_cover.jpg")}}" controls="" width="320" height="314">
-
-<href src="http://research.microsoft.com/apps/video/dl.aspx?id=192058">
- <img src="{{media_url("slides/msr4.24.2013/video_cover.jpg")}}"/> 
-</a>
-</video>
-[See](http://research.microsoft.com/apps/video/dl.aspx?id=192058) if video is broken.
+* May 4, 2013 Matthew Green @ [Microsoft Research](http://research.microsoft.com/en-us/)
+[See](http://research.microsoft.com/apps/video/dl.aspx?id=192058) for video.
 
 Slides [KEYNOTE]({{media_url('slides/msr4.24.2013/zerocoin_msr.key')}})| [PDF]({{media_url("slides/msr4.24.2013/zerocoin_msr.pdf")}}) | [POWERPOINT]({{media_url('slides/msr4.24.2013/zerocoin_msr.ppt')}})
