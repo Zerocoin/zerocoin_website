@@ -14,7 +14,7 @@ The Bitcoin protocol and clients address this in two ways: (1) all Bitcoin trans
 
 The most common solution to this problem is to use Bitcoin laundries --- services that mix together many users' bitcoins in order to obfuscate the transaction history. Laundries suffer from a number of potential drawbacks, however, as they must be trusted to return coins. Moreover a compromised or malicious laundry offers no anonymity.
 
-What makes Zerocoin with the new Zerocash protocol different from previous approaches:
+What makes Zerocoin and the new Zerocash protocol different from previous approaches:
 
 * Zerocoin operates in the **Bitcoin network** and is implemented as a series of extensions to the existing Bitcoin protocol. This approach means that Zerocoin can be deployed without relying on a central coin issuer or bank (as used in previous e-cash schemes). Moreover, since no single trusted party operates the Zerocoin system, attacks on Zerocoin must take on a substantial fraction of the Bitcoin network.
 
@@ -22,7 +22,7 @@ What makes Zerocoin with the new Zerocash protocol different from previous appro
  
 * Other anonymous cash systems rely on distributing the work of anonymizing users amongst a set of parties. This approach works well if all parties are fully available but can be subject to "denial of service" attacks where a small number of nodes are taken offline. Because Zerocoin is built on top of Bitcoin, it is **widely distributed** among all the Bitcoin peers, ensuring that the system can remain available even when many nodes are compromised.
 
-* With the new Zerocash protocol, users can make direct payments to each other with a vastly more efficient cryptographic protocol that also hides the amount of the payment, not just its origin.
+* With the new Zerocash protocol, unlike the old Zerocoin protocol, users can make direct payments to each other with a vastly more efficient cryptographic protocol that also hides the amount of the payment, not just its origin.
 
 ### How Zerocoin works
 With the new Zerocash protocol, Zerocoin allows direct anonymous payments between parties.
@@ -34,4 +34,4 @@ Zerocoin transactions exist alongside the (non-anonymous) Bitcoin currency. Each
 For a more detailed explanation of the new Zerocash protocol see the website for [Zerocash protocol](http://zerocash-project.org/how_zerocash_works.html).
 
 ### The road ahead
-The plan is to make Zerocoin, now powered by the new Zerocash Protocol as it's own altcoin. To do this, we plan on release a working, non research code quality client based off the bitcoin 0.9.1 codebase.   
+The plan is to make an altcoin,  powered by the new Zerocash Protocol, that provides consumers with the financial privacy they expect from debit cards, credit cards, and cash. To do this, we plan on release a working, non research code quality client based off the bitcoin 0.9.1 codebase integrating the new Zerocash protocol.
